@@ -61,8 +61,10 @@
 		var saveMe = function () {
 			if(window.Components) {
 				var filePath = window.location.pathname;
-				filePath = filePath.substring(1);
-				filePath = filePath.replace(/\//g,'\\');
+				if (navigator.platform == "Win32"){
+					filePath = filePath.substring(1);
+					filePath = filePath.replace(/\//g,'\\');
+				}
 
 				var content = jQuery("#textile").val();
 				//try {
