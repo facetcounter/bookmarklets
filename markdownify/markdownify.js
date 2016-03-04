@@ -9,7 +9,7 @@
 (function(){
 
 	var pollJquery = function(){
-		if (typeof jQuery == 'undefined'){
+		if (typeof jQuery === 'undefined'){
 			setTimeout(pollJquery,500);
 		}
 		else {
@@ -64,7 +64,7 @@
 		var saveMe = function () {
 			if(window.Components) {
 				var filePath = window.location.pathname;
-				if (navigator.platform == "Win32"){
+				if (navigator.platform === "Win32"){
 					filePath = filePath.substring(1);
 					filePath = filePath.replace(/\//g,'\\');
 				}
